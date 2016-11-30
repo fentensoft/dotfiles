@@ -11,6 +11,8 @@ ZSH_THEME="agnoster"
 DEFAULT_USER="fentensoft"
 TERM="screen-256color"
 EDITOR="vim"
+zstyle ':completion:*' rehash true
+source /usr/share/doc/pkgfile/command-not-found.zsh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -53,7 +55,7 @@ EDITOR="vim"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, extract)
+plugins=(git, sudo, extract)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
