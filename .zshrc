@@ -86,3 +86,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # F
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pacman="sudo powerpill"
