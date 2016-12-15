@@ -87,3 +87,4 @@ source $ZSH/oh-my-zsh.sh
 # F
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pacman="sudo powerpill"
+screenfetch
