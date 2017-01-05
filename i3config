@@ -181,10 +181,10 @@ bar {
 }
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always /usr/bin/fcitx
-exec_always /usr/bin/nm-applet
+exec /usr/bin/nm-applet & disown
 exec_always /usr/bin/compton
 exec --no-startup-id /usr/bin/volumeicon
 exec /usr/bin/feh --bg-scale /home/fentensoft/Pictures/wallpapers/google.jpg
 exec /usr/bin/chromium
-exec /usr/bin/gnome-terminal
+exec --no-startup-id blueman-applet 
 exec aria2c --enable-rpc --rpc-listen-all --rpc-secret=thisismytoken --dir=/home/fentensoft/Downloads --max-connection-per-server=10 --split=10
