@@ -20,7 +20,7 @@ set incsearch
 nnoremap <silent> <Leader>l :nohl<CR>
 " 搜索时大小写不敏感
 set ignorecase
-
+set gcr=n-v-c:ver25-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor
 " 关闭兼容模式
 set nocompatible
 
@@ -48,7 +48,7 @@ set number
 " 高亮显示搜索结果
 set hlsearch
 " 禁止折行
-set nowrap
+" set nowrap
 " 将制表符扩展为空格
 set expandtab
 " 设置编辑时制表符占用空格数
