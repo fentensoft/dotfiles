@@ -32,6 +32,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+F10 exec /home/fentensoft/source/rofi-tools/rofi-power "i3-msg exit"
+bindsym $mod+c exec chromium
+bindsym $mod+t exec thunar
 # kill focused window
 bindsym $mod+Shift+q kill
 

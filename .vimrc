@@ -35,6 +35,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vim-latex/vim-latex'
 call plug#end()
 filetype indent on
 colorscheme molokai
