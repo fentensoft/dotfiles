@@ -94,12 +94,13 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 set $workspace1 "1: Terminals"
 set $workspace2 "2: Chromium"
+set $workspace3 "3: Edit"
 set $workspace0 "10: Music"
 set $workspace9 "9: Chat"
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace 3
+bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -111,7 +112,7 @@ bindsym $mod+0 workspace $workspace0
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -124,6 +125,7 @@ assign [class="Gnome-terminal"] $workspace1
 assign [class="Chromium"] $workspace2
 assign [class="netease-cloud-music"] $workspace0
 assign [class="electronic-wechat"] $workspace9
+assign [class="Gvim"] $workspace3
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
