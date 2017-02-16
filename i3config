@@ -190,3 +190,4 @@ exec /usr/bin/feh --bg-scale /home/fentensoft/Pictures/wallpapers/google.jpg
 exec /usr/bin/chromium
 exec --no-startup-id blueman-applet 
 exec aria2c --enable-rpc --rpc-listen-all --rpc-secret=thisismytoken --dir=/home/fentensoft/Downloads --max-connection-per-server=10 --split=10
+exec parcellite -n
