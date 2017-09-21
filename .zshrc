@@ -83,4 +83,5 @@ export EDITOR='vim'
 # F
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pacman="sudo powerpill"
+alias changeserver="sudo python3 /home/fentensoft/source/configs/changeserver.py"
 screenfetch
