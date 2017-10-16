@@ -32,7 +32,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+F10 exec /home/fentensoft/source/rofi-tools/rofi-power "i3-msg exit"
-bindsym $mod+c exec chromium
+bindsym $mod+c exec google-chrome-stable
 bindsym $mod+t exec thunar
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -93,7 +93,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 set $workspace1 "1: Terminals"
-set $workspace2 "2: Chromium"
+set $workspace2 "2: Chrome"
 set $workspace3 "3: Edit"
 set $workspace0 "10: Music"
 set $workspace9 "9: Chat"
@@ -122,7 +122,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
 assign [class="Gnome-terminal"] $workspace1
-assign [class="Chromium"] $workspace2
+assign [class="Google-chrome"] $workspace2
 assign [class="netease-cloud-music"] $workspace0
 assign [class="electronic-wechat"] $workspace9
 assign [class="Gvim"] $workspace3
@@ -167,7 +167,7 @@ set $text-color             #f3f4f5
 set $inactive-text-color    #676e7d
 set $urgent-bg-color        #e53935
 new_window normal 0
-for_window [class="Chromium"] border pixel 0
+for_window [class="Google-chrome"] border pixel 0
 client.focused              $bg-color           $bg-color           $text-color             #00ff00
 client.unfocused            $inactive-bg-color  $inactive-bg-color  $inactive-text-color    #00ff00
 client.unfocused_inactive   $inactive-bg-color  $inactive-bg-color  $inactive-text-color    #00ff00
@@ -189,7 +189,7 @@ exec /usr/bin/nm-applet & disown
 exec_always /usr/bin/compton
 exec --no-startup-id /usr/bin/volumeicon
 exec /usr/bin/feh --bg-scale /home/fentensoft/Downloads/Wallpaper/1.jpg
-exec /usr/bin/chromium
+exec /usr/bin/google-chrome-stable
 exec --no-startup-id blueman-applet 
 exec aria2c --enable-rpc --rpc-listen-all --rpc-secret=thisismytoken --dir=/home/fentensoft/Downloads --max-connection-per-server=10 --split=10
 exec parcellite -n
