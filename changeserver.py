@@ -19,7 +19,11 @@ def d(s):
 
 
 def parse_url(url):
-    r = get(url)
+    proxies = {
+            "http": "http://127.0.0.1:4411",
+            "https": "http://127.0.0.1:4411"
+            }
+    r = get(url, proxies=proxies)
     links = d(r.text).split()
     result = []
     for link in links:
