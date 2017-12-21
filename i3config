@@ -174,7 +174,7 @@ client.unfocused_inactive   $inactive-bg-color  $inactive-bg-color  $inactive-te
 client.urgent               $urgent-bg-color    $urgent-bg-color    $text-color             #00ff00
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -fullscreen -padding 150 -opacity "85" -font "Ubuntu Sans Mono 18" -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -bw 0
 bar {
-        status_command i3status
+        status_command py3status --include ~/.config/i3 -t 1
         colors {
             background $bg-color
             separator #757575
