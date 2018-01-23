@@ -49,6 +49,8 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
+focus_follows_mouse no
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -80,7 +82,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym Print exec deepin-screenshot -s ~/Downloads/Screenshots
+bindsym Print exec gnome-screenshot -i
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
