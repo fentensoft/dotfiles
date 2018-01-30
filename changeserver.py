@@ -17,7 +17,7 @@ def d(s):
 
 
 class SSR_parser(object):
-    def __init__(self, url, config_file, supervisor_program, proxy = ""):
+    def __init__(self, url, config_file, supervisor_program = "", proxy = ""):
         self.url = url
         self.config_file = config_file
         self.supervisor_program = supervisor_program
@@ -26,12 +26,12 @@ class SSR_parser(object):
         self.servers = []
 
     def do(self):
-        f = open(self.config_file, "r")
         try:
+            f = open(self.config_file, "r")
             print("\033[1mCurrent server:\033[0m  \033[34m{data[remarks]} {data[server]}\033[0m".format(data=json.loads(f.read())))
+            f.close()
         except:
-            print("\033[31mCannot get current server remark\033[0m")
-        f.close()
+            print("\033[31mCannot get current server\033[0m")
         print("\033[1mGetting server list\033[0m")
         try:
             tmp_server = self.parse_url()
@@ -55,7 +55,8 @@ class SSR_parser(object):
             f = open(self.config_file, "w")
             f.write(json.dumps(conf, ensure_ascii=False))
             f.close()
-            subprocess.call(["supervisorctl", "restart", self.supervisor_program])
+            if self.supervisor_program:
+                subprocess.call(["supervisorctl", "restart", self.supervisor_program])
         except KeyboardInterrupt:
             print("\033[31mUser cancelled\033[0m")
 
@@ -96,11 +97,15 @@ class SSR_parser(object):
             result = p.stdout.read().decode("utf-8")
             ret = re.findall(r"\d+\.\d+/\d+\.\d+/\d+\.\d+/\d+\.\d+", result)[0].split("/")[1]
         else:
-            ret = 999
+            ret = 9999
         server["ping"] = ret
         self.lock.acquire()
         self.servers.append(server)
         self.lock.release()
 
-tmp = SSR_parser("url_here", "config_file_here", "supervisor_program_name_here", "proxy_here")
-tmp.do()
+
+if __name__ == "__main__":
+    tmp = SSR_parser("https://www.abclite.org/subscription/4bf1e2ca4a2c602f57bd23d2edd6e87b.conf", "/etc/shadowsocks-libev/config.json",
+            "shadowsocks")
+    tmp.do()
+
