@@ -57,7 +57,7 @@ set tabstop=4
 set shiftwidth=4
 " 让 vim 把连续数量的空格视为一个制表符
 set softtabstop=4
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 16
 set smartindent
 set autoindent
 " 将外部命令 wmctrl 控制窗口最大化的命令行参数封装成一个 vim 的函数
