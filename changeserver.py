@@ -105,7 +105,7 @@ class SSR_parser(object):
 
 
 if __name__ == "__main__":
-    tmp = SSR_parser("https://www.abclite.org/subscription/4bf1e2ca4a2c602f57bd23d2edd6e87b.conf", "/etc/shadowsocks-libev/config.json",
+    tmp = SSR_parser("SUBSCRIBE_LINK_HERE", "/etc/shadowsocks-libev/config.json",
             "shadowsocks")
     tmp.do()
 
