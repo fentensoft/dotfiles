@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+F10 exec /home/fentensoft/source/rofi-tools/rofi-power "i3-msg exit"
 bindsym $mod+c exec google-chrome-stable
-bindsym $mod+t exec thunar
+bindsym $mod+t exec nautilus
 # kill focused window
 bindsym $mod+q kill
 
