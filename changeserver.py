@@ -4,7 +4,6 @@ import re
 import threading
 import requests
 import base64
-import pick
 
 
 def d(s):
@@ -44,9 +43,11 @@ class SSR_parser(object):
             for task in tasks:
                 task.join()
             self.servers = sorted(self.servers, key=lambda l: float(l["ping"]))
-            selected = pick.pick(list(map(lambda line: line["remarks"].ljust(15) + str(line["ping"]), self.servers)))
-            print("\033[34m{}\033[0m \033[1mselected\033[0m".format(self.servers[selected[1]]["remarks"]))
-            conf = self.servers[selected[1]]
+            for i in range(len(self.servers)):
+                print("\033[34m{}\033[0m. {} {}ms".format(i, self.servers[i]["remarks"], self.servers[i]["ping"]))
+            selected = int(input("\033[1mPlease enter the ID of server: \033[0m"))
+            print("\033[34m{}\033[0m \033[1mselected\033[0m".format(self.servers[selected]["remarks"]))
+            conf = self.servers[selected]
             del conf["ping"]
             conf["local_port"] = "1080"
             conf["timeout"] = "60"
@@ -105,7 +106,7 @@ class SSR_parser(object):
 
 
 if __name__ == "__main__":
-    tmp = SSR_parser("SUBSCRIBE_LINK_HERE", "/etc/shadowsocks-libev/config.json",
+    tmp = SSR_parser("https://www.boslife.co/subscription/4bf1e2ca4a2c602f57bd23d2edd6e87b.conf", "/etc/shadowsocks-libev/config.json",
             "shadowsocks")
     tmp.do()
 

@@ -82,7 +82,6 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym Print exec gnome-screenshot -i
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -190,7 +189,6 @@ exec_always /usr/bin/compton
 exec --no-startup-id /usr/bin/volumeicon
 exec /usr/bin/feh --bg-scale /home/fentensoft/Downloads/Wallpaper/1.jpg
 exec /usr/bin/google-chrome-stable
-exec --no-startup-id blueman-applet 
-exec aria2c --enable-rpc --rpc-listen-all --rpc-secret=thisismytoken --dir=/home/fentensoft/Downloads --max-connection-per-server=10 --split=10
 exec parcellite -n
-exec syndaemon -i 0.5 -t -K -R -d
+exec syndaemon -i 1 -t -K -R -d
+exec shutter --min_at_startup
