@@ -44,7 +44,7 @@ class SSR_parser(object):
                 task.join()
             self.servers = sorted(self.servers, key=lambda l: float(l["ping"]))
             for i in range(len(self.servers)):
-                print("\033[34m{}\033[0m. {} {}ms".format(i, self.servers[i]["remarks"], self.servers[i]["ping"]))
+                print("\033[34m{}\033[0m. {} \033[34m{}ms\033[0m".format(i, self.servers[i]["remarks"], self.servers[i]["ping"]))
             selected = int(input("\033[1mPlease enter the ID of server: \033[0m"))
             print("\033[34m{}\033[0m \033[1mselected\033[0m".format(self.servers[selected]["remarks"]))
             conf = self.servers[selected]
@@ -89,7 +89,7 @@ class SSR_parser(object):
         return result
 
     def ping(self, server):
-        p = subprocess.Popen("ping -W1 -c4 -i0.2 {}".format(server["server"]),
+        p = subprocess.Popen("ping -W1 -c2 -i0.2 {}".format(server["server"]),
                              stdin=subprocess.PIPE,
                              stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE,
@@ -106,7 +106,7 @@ class SSR_parser(object):
 
 
 if __name__ == "__main__":
-    tmp = SSR_parser("https://www.boslife.co/subscription/4bf1e2ca4a2c602f57bd23d2edd6e87b.conf", "/etc/shadowsocks-libev/config.json",
+    tmp = SSR_parser("", "/etc/shadowsocks-libev/config.json",
             "shadowsocks")
     tmp.do()
 
