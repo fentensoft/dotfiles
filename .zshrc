@@ -10,7 +10,6 @@ export ZSH=/home/fentensoft/.oh-my-zsh
 ZSH_THEME="agnoster"
 DEFAULT_USER="fentensoft"
 TERM="screen-256color"
-EDITOR="vim"
 zstyle ':completion:*' rehash true
 source /usr/share/doc/pkgfile/command-not-found.zsh
 # Uncomment the following line to use case-sensitive completion.
