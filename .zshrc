@@ -86,3 +86,5 @@ export http_proxy=http://127.0.0.1:4411
 export https_proxy=http://127.0.0.1:4411
 alias changeserver="sudo python3 /home/fentensoft/source/configs/changeserver.py"
 screenfetch
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs time)
