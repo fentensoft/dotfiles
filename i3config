@@ -166,7 +166,8 @@ set $text-color             #f3f4f5
 set $inactive-text-color    #676e7d
 set $urgent-bg-color        #e53935
 new_window normal 0
-for_window [class="Google-chrome"] border pixel 0
+for_window [class="Nautilus"] border none
+for_window [class="Google-chrome"] border none
 client.focused              $bg-color           $bg-color           $text-color             #00ff00
 client.unfocused            $inactive-bg-color  $inactive-bg-color  $inactive-text-color    #00ff00
 client.unfocused_inactive   $inactive-bg-color  $inactive-bg-color  $inactive-text-color    #00ff00
@@ -192,3 +193,4 @@ exec /usr/bin/google-chrome-stable
 exec parcellite -n
 exec syndaemon -i 1 -t -K -R -d
 exec shutter --min_at_startup
+exec blueman-applet
