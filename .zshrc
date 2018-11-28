@@ -15,6 +15,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /etc/profile.d/autojump.zsh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -27,5 +28,6 @@ alias npm="npm --registry=https://registry.npm.taobao.org \
     --cache=$HOME/.npm/.cache/cnpm \
     --disturl=https://npm.taobao.org/dist \
     --userconfig=$HOME/.cnpmrc"
+alias ls="exa"
 
-screenfetch
+neofetch
