@@ -17,12 +17,9 @@ source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /etc/profile.d/autojump.zsh
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 alias pacman="sudo powerpill"
+alias syu="pacman -Syu && yay"
 alias activate="source /home/fentensoft/source/miniconda3/bin/activate"
-alias changeserver="sudo /home/fentensoft/source/miniconda3/bin/python3 /home/fentensoft/source/configs/changeserver.py"
 alias jn="jupyter notebook"
 alias npm="npm --registry=https://registry.npm.taobao.org \
     --cache=$HOME/.npm/.cache/cnpm \

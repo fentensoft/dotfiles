@@ -11,7 +11,9 @@ vnoremap <Leader>y "+y
 
 " 设置快捷键将系统剪贴板内容粘贴至vim
 nmap <Leader>p "+p
-
+nmap <C-V> "+P
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
 " 让配置变更立即生效
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
@@ -20,28 +22,29 @@ set incsearch
 nnoremap <silent> <Leader>l :nohl<CR>
 " 搜索时大小写不敏感
 set ignorecase
-set gcr=n-v-c:ver25-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor
+set gcr=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver10-Cursor/lCursor
+
 " 关闭兼容模式
 set nocompatible
+set noshowmode
 
 " vim 自身命令行模式智能补全
 set wildmenu
 
 call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'lervag/vimtex'
 call plug#end()
 filetype indent on
 colorscheme molokai
-let g:airline_theme='bubblegum'
-let g:airline_powerline_fonts = 1
 
 set laststatus=2
+set encoding=UTF-8
 syntax on
 " 开启行号显示
 set number
@@ -57,12 +60,12 @@ set tabstop=4
 set shiftwidth=4
 " 让 vim 把连续数量的空格视为一个制表符
 set softtabstop=4
-set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 16
+set guifont=Fira\ Code\ 16
 set smartindent
 set autoindent
 " 将外部命令 wmctrl 控制窗口最大化的命令行参数封装成一个 vim 的函数
 fun! ToggleFullscreen()
-	call system("wmctrl -ir " . v:windowid . " -b toggle,maximized_vert,maximized_horz")
+    call system("wmctrl -ir " . v:windowid . " -b toggle,maximized_vert,maximized_horz")
 endf
 " 全屏开/关快捷键
 map <silent> <F11> :call ToggleFullscreen()<CR>
@@ -90,5 +93,22 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
+
+nmap <Leader>b :VimtexCompile<CR>
+
+let g:lightline = {
+            \ 'component_function': {
+            \   'filetype': 'MyFiletype',
+            \   'fileformat': 'MyFileformat',
+            \ }
+            \ }
+
+function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+    return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
