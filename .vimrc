@@ -9,6 +9,8 @@ filetype plugin on
 " 设置快捷键将选中文本块复制至系统剪贴板
 vnoremap <Leader>y "+y
 
+command W w
+
 " 设置快捷键将系统剪贴板内容粘贴至vim
 nmap <Leader>p "+p
 nmap <C-V> "+P
