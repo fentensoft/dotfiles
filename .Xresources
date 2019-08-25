@@ -1,8 +1,33 @@
-! ------------------------------------------------------------------------------
-! ! ROFI Color theme
-! ! ------------------------------------------------------------------------------
+! Rofi configuration
 rofi.color-enabled: true
 rofi.color-window: #273238, #273238, #1e2529
 rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
 rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
 rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+
+! URxvt configuration
+URxvt.font: xft:DejaVuSansMono Nerd Font:size=15
+URxvt.scrollBar: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.foreground:   #eceff1
+URxvt.background:   #263238
+URxvt.cursorColor:  #eceff1
+URxvt.color0:       #263238
+URxvt.color8:       #37474f
+URxvt.color1:       #ff9800
+URxvt.color9:       #ffa74d
+URxvt.color2:       #8bc34a
+URxvt.color10:      #9ccc65
+URxvt.color3:       #ffc107
+URxvt.color11:      #ffa000
+URxvt.color4:       #03a9f4
+URxvt.color12:      #81d4fa
+URxvt.color5:       #e91e63
+URxvt.color13:      #ad1457
+URxvt.color6:       #009688
+URxvt.color14:      #26a69a
+URxvt.color7:       #cfd8dc
+URxvt.color15:      #eceff1
+
