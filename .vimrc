@@ -114,3 +114,11 @@ function! MyFileformat()
 endfunction
 
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+if &term =~ '^rxvt\|xterm'
+    " Solid vertical bar
+    let &t_SI .= "\<Esc>[6 q"
+    " Solid block
+    let &t_EI .= "\<Esc>[2 q"
+endif
+
