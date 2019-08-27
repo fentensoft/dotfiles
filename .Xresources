@@ -9,29 +9,3 @@ rofi.fullscreen: true
 rofi.font: DejaVuSansMono Nerd Font 18
 rofi.eh: 2
 
-! URxvt configuration
-URxvt.font: xft:DejaVuSansMono Nerd Font:size=15:antialias=True,xft:Noto Sans CJK SC:size=17,antialias=True
-URxvt.scrollBar: false
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.iso14755: false
-URxvt.foreground:   #eceff1
-URxvt.background:   #263238
-URxvt.cursorColor:  #eceff1
-URxvt.color0:       #263238
-URxvt.color8:       #37474f
-URxvt.color1:       #ff9800
-URxvt.color9:       #ffa74d
-URxvt.color2:       #8bc34a
-URxvt.color10:      #9ccc65
-URxvt.color3:       #ffc107
-URxvt.color11:      #ffa000
-URxvt.color4:       #03a9f4
-URxvt.color12:      #81d4fa
-URxvt.color5:       #e91e63
-URxvt.color13:      #ad1457
-URxvt.color6:       #009688
-URxvt.color14:      #26a69a
-URxvt.color7:       #cfd8dc
-URxvt.color15:      #eceff1
-

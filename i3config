@@ -30,7 +30,7 @@ font pango:DejaVuSansMono Nerd Font Book 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 bindsym $mod+F10 exec /home/fentensoft/source/rofi-tools/rofi-power "i3-msg exit"
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+t exec nautilus
