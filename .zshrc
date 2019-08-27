@@ -2,7 +2,7 @@ export ZSH=/home/fentensoft/.oh-my-zsh
 plugins=(sudo extract git)
 zstyle ':completion:*' rehash true
 export DEFAULT_USER="fentensoft"
-export TERM="screen-256color"
+export TERM="xterm-256color"
 export EDITOR='vim'
 export http_proxy=http://127.0.0.1:4411
 export https_proxy=http://127.0.0.1:4411
