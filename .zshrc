@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH=/usr/share/oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 plugins=(git extract vi-mode)
@@ -15,12 +22,11 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 alias yay="yay --aururl https://aur.tuna.tsinghua.edu.cn"
-alias pacman="sudo powerpill"
-alias syu="pacman -Syu && yay -Syu"
+alias syu="sudo pacman -Syu && yay -Syu"
 alias npm="npm --registry=https://registry.npm.taobao.org \
     --cache=$HOME/.npm/.cache/cnpm \
     --disturl=https://npm.taobao.org/dist \
     --userconfig=$HOME/.cnpmrc"
-
-neofetch
+bindkey  "${terminfo[khome]}"   beginning-of-line
+bindkey  "${terminfo[kend]}"   end-of-line
 
