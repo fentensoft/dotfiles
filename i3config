@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Noto Serif CJK SC 15
+font pango:DejaVuSansMono Nerd Font Mono 15
 
 floating_modifier $mod
 
@@ -128,7 +128,7 @@ bindsym $mod+Shift+x exec betterlockscreen -l
 new_window normal 0
 for_window [class="Nautilus"] border none
 for_window [class="Google-chrome"] border none
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused              #0088CC #0088CC #d8dee8 #bf616a #d8dee8
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
@@ -136,18 +136,17 @@ client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background           #2f343f
 
 bar {
-        status_command i3status
-        colors {
-            background #2f343f
-            statusline #2f343f
-            separator #4b5262
-
-            # colour of border, background, and text
-            focused_workspace       #2f343f #bf616a #d8dee8
-            active_workspace        #2f343f #2f343f #d8dee8
-            inactive_workspace      #2f343f #2f343f #d8dee8
-            urgent_workspacei       #2f343f #ebcb8b #2f343f
-        }
+    font pango:DejaVuSansMono Nerd Font 15
+    status_command i3status-rs
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
 }
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 exec --no-startup-id nm-applet
@@ -156,7 +155,7 @@ exec --no-startup-id fcitx-autostart
 exec --no-startup-id picom
 exec --no-startup-id volumeicon
 exec --no-startup-id blueberry-tray
-exec --no-startup-id feh --bg-scale /home/fentensoft/Downloads/Wallpaper/1.jpg
+exec --no-startup-id feh --bg-scale /home/fentensoft/source/dotfiles/1.jpg
 exec --no-startup-id parcellite -n
 exec --no-startup-id clash
 exec --no-startup-id syndaemon -i 1 -t -K -R -d
