@@ -12,7 +12,7 @@ ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERM=xterm-256color
 source $ZSH/oh-my-zsh.sh
 source /usr/share/doc/pkgfile/command-not-found.zsh
@@ -27,6 +27,8 @@ alias npm="npm --registry=https://registry.npm.taobao.org \
     --cache=$HOME/.npm/.cache/cnpm \
     --disturl=https://npm.taobao.org/dist \
     --userconfig=$HOME/.cnpmrc"
+alias vim="nvim"
+setopt no_nomatch
 bindkey  "${terminfo[khome]}"   beginning-of-line
 bindkey  "${terminfo[kend]}"   end-of-line
 
