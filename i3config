@@ -149,15 +149,15 @@ bar {
             urgent_workspacei       #2f343f #ebcb8b #2f343f
         }
 }
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
+exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id fcitx-autostart
-#exec --no-startup-id picom
+exec --no-startup-id picom
 exec --no-startup-id volumeicon
 exec --no-startup-id blueberry-tray
-#exec --no-startup-id feh --bg-scale /home/fentensoft/Downloads/Wallpaper/1.jpg
+exec --no-startup-id feh --bg-scale /home/fentensoft/Downloads/Wallpaper/1.jpg
 exec --no-startup-id parcellite -n
 exec --no-startup-id clash
 exec --no-startup-id syndaemon -i 1 -t -K -R -d
 exec --no-startup-id flameshot
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
-exec --no-startup-id nm-applet
