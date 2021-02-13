@@ -1,8 +1,20 @@
 theme = "slick"
-icons = "awesome"
+
+[icons]
+name = "awesome"
+[icons.overrides]
+bat_charging = "  "
+bat_discharging = "  "
+bat_empty = "  "
+bat_full = "  "
+bat_half = "  "
+bat_no_available = "  "
+bat_quarter = "  "
+bat_three_quarters = "  "
 
 [[block]]
 block = "disk_space"
+format = "{icon}{available} {unit}"
 path = "/"
 alias = "/"
 info_type = "available"
@@ -12,6 +24,14 @@ warning = 20.0
 alert = 10.0
 
 [[block]]
+block = "networkmanager"
+interface_name_include = ["enp0s316","wlp0s20f3","vpn0"]
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
 block = "memory"
 clickable = false
 display_type = "memory"
@@ -19,18 +39,7 @@ format_mem = "{Mup}%"
 format_swap = "{SUp}%"
 
 [[block]]
-block = "cpu"
-interval = 1
-
-[[block]]
-block = "net"
-format = "{ssid} {ip}"
-interval = 5
-use_bits = false
-
-[[block]]
 block = "battery"
-driver = "upower"
 format = "{percentage}% {time}"
 
 [[block]]
