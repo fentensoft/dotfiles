@@ -25,7 +25,7 @@ alert = 10.0
 
 [[block]]
 block = "networkmanager"
-interface_name_include = ["enp0s316","wlp0s20f3","vpn0"]
+interface_name_include = ["enp2s0"]
 
 [[block]]
 block = "cpu"
@@ -39,11 +39,7 @@ format_mem = "{Mup}%"
 format_swap = "{SUp}%"
 
 [[block]]
-block = "battery"
-format = "{percentage}% {time}"
-
-[[block]]
 block = "time"
-interval = 60
+interval = 1
 format = "%m-%d %H:%M"
 

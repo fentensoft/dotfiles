@@ -138,6 +138,7 @@ client.background           #2f343f
 bar {
     font pango:DejaVuSansMono Nerd Font 14
     status_command i3status-rs
+    tray_output primary
     colors {
         separator #666666
         background #222222
@@ -148,15 +149,13 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
+
+exec --no-startup-id feh --bg-scale /home/fentensoft/source/dotfiles/1.jpg
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id fcitx-autostart
 exec --no-startup-id picom
 exec --no-startup-id volumeicon
-exec --no-startup-id blueberry-tray
-exec --no-startup-id feh --bg-scale /home/fentensoft/source/dotfiles/1.jpg
 exec --no-startup-id parcellite -n
-exec --no-startup-id clash
-exec --no-startup-id syndaemon -i 1 -t -K -R -d
 exec --no-startup-id flameshot

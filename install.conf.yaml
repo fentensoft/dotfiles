@@ -1,0 +1,31 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create:
+    - ~/Downloads
+    - ~/.config
+    - ~/.config/picom
+    - ~/.config/i3status-rust
+    - ~/.config/nvim
+    - ~/.config/i3
+    - ~/.config/alacritty
+    - ~/.ssh
+    - ~/.vim
+
+- link:
+    ~/.config/nvim/init.vim: vimrc
+    ~/.zshrc: zshrc
+    ~/.config/picom/picom.conf: picom.conf
+    ~/.Xresources: Xresources
+    ~/.ssh/config: ssh_config
+    ~/.config/i3/config: i3config
+    ~/.config/i3status-rust/config.toml: i3status-rust.toml
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.p10k.zsh: p10k.zsh
+
+- shell:
+    - nvim --headless -c PlugUpgrade -c qall
+
