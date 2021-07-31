@@ -14,7 +14,7 @@ bat_three_quarters = "  "
 
 [[block]]
 block = "disk_space"
-format = "{icon}{available} {unit}"
+format = "{icon} {available}"
 path = "/"
 alias = "/"
 info_type = "available"
@@ -35,8 +35,7 @@ interval = 1
 block = "memory"
 clickable = false
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{mem_used_percents}"
 
 [[block]]
 block = "time"
