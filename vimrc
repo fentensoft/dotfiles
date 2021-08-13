@@ -49,7 +49,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 filetype indent on
 colorscheme molokai
