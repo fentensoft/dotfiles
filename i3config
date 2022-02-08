@@ -24,7 +24,7 @@ bindsym $mod+k focus up
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 
-focus_follows_mouse yes
+focus_follows_mouse no
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -128,6 +128,8 @@ bindsym $mod+Shift+x exec betterlockscreen -l
 new_window normal 0
 for_window [class="Nautilus"] border none
 for_window [class="Google-chrome"] border none
+for_window [class="Bytedance-feishu"] floating enable
+for_window [title="图片"] floating enable
 client.focused              #0088CC #0088CC #d8dee8 #bf616a #d8dee8
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
@@ -150,12 +152,14 @@ bar {
     }
 }
 
-exec --no-startup-id feh --bg-scale /home/fentensoft/source/dotfiles/1.jpg
+workspace_layout tabbed
+
+exec --no-startup-id feh --bg-scale /home/fentensoft/source/dotfiles/2.jpg
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id fcitx-autostart
-exec --no-startup-id picom
+#exec --no-startup-id picom
 exec --no-startup-id volumeicon
 exec --no-startup-id parcellite -n
 exec --no-startup-id flameshot

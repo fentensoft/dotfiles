@@ -33,4 +33,4 @@ bindkey  "${terminfo[khome]}"   beginning-of-line
 bindkey  "${terminfo[kend]}"   end-of-line
 
 export PYTHONPATH="$HOME/source/utopia-auto-tools:$PYTHONPATH"
-export PATH="$HOME/source/utopia-auto-tools/utopia_lib/bin:$HOME/.local/bin:$PATH:/usr/local/mdc_cross_compile_sdk/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.local/bin:$PATH"
