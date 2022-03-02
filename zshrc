@@ -21,7 +21,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-alias yay="yay --aururl https://aur.tuna.tsinghua.edu.cn"
 alias syu="sudo pacman -Syu && yay -Syu"
 alias npm="npm --registry=https://registry.npm.taobao.org \
     --cache=$HOME/.npm/.cache/cnpm \
@@ -32,5 +31,4 @@ setopt no_nomatch
 bindkey  "${terminfo[khome]}"   beginning-of-line
 bindkey  "${terminfo[kend]}"   end-of-line
 
-export PYTHONPATH="$HOME/source/utopia-auto-tools:$PYTHONPATH"
 export PATH="$HOME/.yarn/bin:$HOME/.local/bin:$PATH"
