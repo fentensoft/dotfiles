@@ -16,7 +16,7 @@ bindsym $mod+c exec google-chrome-stable
 bindsym $mod+q kill
 
 # rofi
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -show-icons
 
 # change focus
 bindsym $mod+j focus down
@@ -154,11 +154,12 @@ bar {
 
 workspace_layout tabbed
 
-exec --no-startup-id feh --bg-scale /home/fentensoft/source/dotfiles/2.jpg
+exec --no-startup-id feh --bg-scale /home/fentensoft/source/dotfiles/1.jpg
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id fcitx-autostart
+exec --no-startup-id qv2ray
 #exec --no-startup-id picom
 exec --no-startup-id volumeicon
 exec --no-startup-id parcellite -n
