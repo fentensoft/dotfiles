@@ -1,5 +1,5 @@
 Host *
     ServerAliveInterval 15
     TCPKeepAlive yes
-    Compression no
+    Compression yes
 

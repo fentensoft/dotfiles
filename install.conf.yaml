@@ -6,24 +6,24 @@
 
 - create:
     - ~/Downloads
+    - ~/workspace
     - ~/.config
-    - ~/.config/picom
-    - ~/.config/i3status-rust
     - ~/.config/nvim
-    - ~/.config/i3
     - ~/.ssh
     - ~/.vim
 
 - link:
     ~/.config/nvim/init.vim: vimrc
     ~/.zshrc: zshrc
-    ~/.config/picom/picom.conf: picom.conf
-    ~/.Xresources: Xresources
     ~/.ssh/config: ssh_config
-    ~/.config/i3/config: i3config
-    ~/.config/i3status-rust/config.toml: i3status-rust.toml
     ~/.p10k.zsh: p10k.zsh
+    ~/.gitconfig: gitconfig
 
 - shell:
-    - nvim --headless -c PlugUpgrade -c qall
+    - sh -c "KEEP_ZSHRC=yes $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    - nvim --headless -c PlugInstall -c qall
+    - git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    - git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    - git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
